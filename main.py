@@ -32,7 +32,8 @@ def read_text(prompt):
 class QuizGame:
     def __init__(self):
         self.quizzes = create_default_quizzes()
-
+        self.best_score = None
+        
     def play(self):
         if not self.quizzes:
             print("등록된 퀴즈가 없습니다.")
@@ -53,6 +54,11 @@ class QuizGame:
                 print(f"오답입니다. 정답은 {quiz.answer}번 {correct_choice}입니다.")
 
         print(f"\n{len(self.quizzes)}문제 중 {correct_count}문제 정답입니다.")
+
+        if self.best_score is None or correct_count > self.best_score:
+           self.best_score = correct_count
+           print("새로운 최고 기록입니다!")
+
     def show_menu(self):
         print("\n=== Python 기초 상식 퀴즈 ===")
         print("1. 퀴즈 풀기")
