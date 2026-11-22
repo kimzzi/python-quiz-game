@@ -72,6 +72,14 @@ class QuizGame:
         self.quizzes.append(Quiz(question, choices, answer))
         print(f"퀴즈가 추가되었습니다. 현재 총 {len(self.quizzes)}문제입니다.")
 
+    def list_quizzes(self):
+        if not self.quizzes:
+            print("등록된 퀴즈가 없습니다.")
+            return
+
+        print(f"\n등록된 퀴즈 (총 {len(self.quizzes)}개)")
+        for number, quiz in enumerate(self.quizzes, start=1):
+            print(f"[{number}] {quiz.question}")    
     def run(self):
         try:
             while True:
@@ -86,6 +94,8 @@ class QuizGame:
                     self.play()
                 elif choice == 2:
                     self.add_quiz()
+                elif choice == 3:
+                    self.list_quizzes()
                 else:
                     print("이 기능은 다음 단계에서 구현합니다.")
         except (KeyboardInterrupt, EOFError):
