@@ -43,3 +43,4 @@ python main.py
 - `quizzes`는 퀴즈 목록입니다. 각 항목에는 `question`(문제), `choices`(선택지 4개), `answer`(정답 번호 1~4)가 들어 있습니다.
 - `best_score`는 한 판의 최고 정답 수입니다. 완료한 게임이 없으면 `null`입니다.
 - 저장 파일이 없거나 손상되면 기본 퀴즈로 시작합니다.
+Windows에서는 python 명령 대신 py -3 main.py로도 실행할 수 있습니다.
